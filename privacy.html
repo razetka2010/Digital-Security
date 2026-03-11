@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика конфиденциальности | КиберЛаб</title>
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Подключаем общий CSS (можно использовать тот же, что и на главной) -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Дополнительные стили только для страницы политики */
+        .policy-page {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .policy-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .policy-header h1 {
+            font-size: 2.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+        }
+
+        .policy-header .last-updated {
+            color: #666;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .policy-header .last-updated i {
+            color: var(--accent-safe);
+        }
+
+        .policy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px -15px rgba(10, 25, 47, 0.15);
+            padding: 50px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .policy-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eef2f6;
+        }
+
+        .policy-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .policy-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .policy-section h2 i {
+            color: var(--accent-safe);
+            font-size: 1.8rem;
+        }
+
+        .policy-section h3 {
+            font-size: 1.3rem;
+            margin: 25px 0 15px;
+            color: #2c3e50;
+        }
+
+        .policy-section p {
+            margin-bottom: 15px;
+            color: #3f4e60;
+            line-height: 1.7;
+        }
+
+        .policy-section ul, .policy-section ol {
+            margin: 15px 0 20px 25px;
+            color: #3f4e60;
+        }
+
+        .policy-section li {
+            margin-bottom: 10px;
+        }
+
+        .policy-section .note {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 16px;
+            border-left: 4px solid var(--accent-safe);
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        .policy-section .note i {
+            color: var(--accent-safe);
+            margin-right: 8px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+        }
+
+        .data-table th {
+            background: var(--primary-dark);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eef2f6;
+            background: #f9fbfd;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight {
+            background: rgba(76, 175, 80, 0.1);
+            padding: 2px 8px;
+            border-radius: 20px;
+            color: var(--accent-safe);
+            font-weight: 600;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-safe);
+        }
+
+        .back-link i {
+            transition: transform 0.2s;
+        }
+
+        .back-link:hover i {
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .policy-content {
+                padding: 30px 20px;
+            }
+
+            .policy-header h1 {
+                font-size: 2rem;
+            }
+
+            .policy-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .data-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        .cookie-banner {
+            background: var(--primary-dark);
+            color: white;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: none;
+            animation: slideUp 0.5s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        .cookie-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-content p {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cookie-content p i {
+            color: var(--accent-safe);
+            font-size: 1.5rem;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .cookie-btn {
+            padding: 10px 24px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .cookie-btn.accept {
+            background: var(--accent-safe);
+            color: white;
+        }
+
+        .cookie-btn.accept:hover {
+            background: #3d9b41;
+        }
+
+        .cookie-btn.decline {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .cookie-btn.decline:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .print-btn {
+            background: var(--primary-dark);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: auto;
+            transition: background 0.2s;
+        }
+
+        .print-btn:hover {
+            background: #1a2a3f;
+        }
+
+        @media print {
+            .footer, .back-link, .print-btn, .cookie-banner {
+                display: none !important;
+            }
+
+            .policy-content {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Навигация (мини-хедер) -->
+<div style="background: var(--primary-dark); padding: 15px 0; border-bottom: 1px solid #1e3850;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+        <a href="index.html" class="back-link" style="color: white; margin: 0;">
+            <i class="fas fa-arrow-left"></i> На главную
+        </a>
+        <div style="color: white; font-weight: 600;">КиберЛаб</div>
+    </div>
+</div>
+
+<div class="policy-page">
+    <div class="container">
+        <div class="policy-header">
+            <h1>Политика конфиденциальности</h1>
+            <div class="last-updated">
+                <i class="fas fa-calendar-alt"></i>
+                Последнее обновление: 12 марта 2026 г.
+            </div>
+        </div>
+
+        <div class="policy-content">
+            <!-- Краткое содержание для быстрого ознакомления -->
+            <div class="policy-section">
+                <h2><i class="fas fa-bullseye"></i> В двух словах</h2>
+                <p>Мы серьезно относимся к вашей конфиденциальности. Этот документ объясняет, какие данные мы собираем, зачем и как их защищаем. <span class="highlight">Мы не продаем ваши данные</span> и не передаем их третьим лицам без необходимости.</p>
+            </div>
+
+            <!-- 1. Какие данные собираем -->
+            <div class="policy-section">
+                <h2><i class="fas fa-database"></i> 1. Какие данные мы собираем</h2>
+
+                <h3>1.1. Данные, которые вы предоставляете добровольно</h3>
+                <ul>
+                    <li><strong>Контактная информация:</strong> имя, email (если заполняете форму обратной связи)</li>
+                    <li><strong>Сообщения:</strong> содержание ваших обращений, вопросов, отзывов</li>
+                    <li><strong>Подписка:</strong> данные, указанные при подписке на рассылку (если такая будет)</li>
+                </ul>
+
+                <h3>1.2. Данные, собираемые автоматически</h3>
+                <table class="data-table">
+                    <thead>
+                    <tr>
+                        <th>Тип данных</th>
+                        <th>Описание</th>
+                        <th>Цель сбора</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>IP-адрес</td>
+                        <td>Адрес вашего устройства в сети</td>
+                        <td>Защита от атак, аналитика</td>
+                    </tr>
+                    <tr>
+                        <td>Тип браузера</td>
+                        <td>Chrome, Firefox, Safari и т.д.</td>
+                        <td>Оптимизация отображения сайта</td>
+                    </tr>
+                    <tr>
+                        <td>Cookies</td>
+                        <td>Небольшие файлы на вашем устройстве</td>
+                        <td>Запоминание настроек, аналитика</td>
+                    </tr>
+                    <tr>
+                        <td>Страницы посещений</td>
+                        <td>Какие разделы вы смотрите</td>
+                        <td>Улучшение структуры сайта</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="note">
+                    <i class="fas fa-shield-alt"></i>
+                    <strong>Важно:</strong> Мы НЕ собираем пароли, платежные данные, паспортные данные и другую чувствительную информацию.
+                </div>
+            </div>
+
+            <!-- 2. Как мы используем данные -->
+            <div class="policy-section">
+                <h2><i class="fas fa-cogs"></i> 2. Как мы используем ваши данные</h2>
+                <ul>
+                    <li><i class="fas fa-check" style="color: var(--accent-safe); margin-right: 8px;"></i> Для ответа на ваши вопросы (если вы написали нам)</li>
+                    <li><i class="fas fa-check" style="color: var(--accent-safe); margin-right: 8px;"></i> Для улучшения работы сайта и контента</li>
+                    <li><i class="fas fa-check" style="color: var(--accent-safe); margin-right: 8px;"></i> Для защиты от злоумышленников и мошеннических действий</li>
+                    <li><i class="fas fa-check" style="color: var(--accent-safe); margin-right: 8px;"></i> Для соблюдения требований законодательства</li>
+                </ul>
+                <p style="margin-top: 20px;"><strong>Мы НЕ используем</strong> ваши данные для рекламных рассылок без вашего явного согласия.</p>
+            </div>
+
+            <!-- 3. Cookies -->
+            <div class="policy-section">
+                <h2><i class="fas fa-cookie-bite"></i> 3. Использование cookies</h2>
+                <p>Cookies — это небольшие текстовые файлы, которые сохраняются на вашем устройстве при посещении сайта. Мы используем:</p>
+                <ul>
+                    <li><strong>Необходимые cookies</strong> — для работы сайта (например, запоминание согласия с политикой)</li>
+                    <li><strong>Аналитические cookies</strong> — чтобы понимать, какие страницы популярны (через Яндекс.Метрику и Google Analytics в анонимизированной форме)</li>
+                </ul>
+                <p>Вы можете отключить cookies в настройках браузера, но некоторые функции сайта могут работать некорректно.</p>
+
+                <div style="margin-top: 20px; padding: 15px; background: #f0f7f0; border-radius: 12px;">
+                    <i class="fas fa-sliders-h" style="color: var(--accent-safe); margin-right: 8px;"></i>
+                    <strong>Настройка cookies:</strong>
+                    <button id="showCookieSettings" style="margin-left: 15px; padding: 5px 15px; background: var(--accent-safe); color: white; border: none; border-radius: 20px; cursor: pointer;">Настроить</button>
+                </div>
+            </div>
+
+            <!-- 4. Передача данных третьим лицам -->
+            <div class="policy-section">
+                <h2><i class="fas fa-share-alt"></i> 4. Передача данных третьим лицам</h2>
+                <p>Мы передаем данные только в следующих случаях:</p>
+                <ul>
+                    <li><strong>Аналитические системы:</strong> Яндекс.Метрика, Google Analytics (в обезличенном виде)</li>
+                    <li><strong>По требованию закона:</strong> если это необходимо по запросу уполномоченных органов РФ</li>
+                    <li><strong>Техническим партнерам:</strong> хостинг-провайдерам для обеспечения работы сайта</li>
+                </ul>
+                <p><strong>Мы не продаем</strong> ваши данные маркетинговым агентствам, не передаем их рекламодателям и не используем для таргетинга.</p>
+            </div>
+
+            <!-- 5. Защита данных -->
+            <div class="policy-section">
+                <h2><i class="fas fa-lock"></i> 5. Как мы защищаем данные</h2>
+                <ul>
+                    <li>Все соединения с сайтом защищены шифрованием (HTTPS)</li>
+                    <li>Доступ к данным ограничен и контролируется</li>
+                    <li>Регулярное обновление систем безопасности</li>
+                    <li>Мониторинг подозрительной активности</li>
+                </ul>
+                <p>Но помните: интернет не гарантирует 100% безопасности. Пожалуйста, тоже соблюдайте осторожность.</p>
+            </div>
+
+            <!-- 6. Ваши права -->
+            <div class="policy-section">
+                <h2><i class="fas fa-user-check"></i> 6. Ваши права</h2>
+                <p>Вы имеете право:</p>
+                <ul>
+                    <li><strong>На доступ</strong> — запросить информацию о том, какие данные мы храним</li>
+                    <li><strong>На удаление</strong> — попросить удалить ваши данные (кроме тех, что мы обязаны хранить по закону)</li>
+                    <li><strong>На исправление</strong> — уточнить некорректные данные</li>
+                    <li><strong>На отзыв согласия</strong> — отказаться от обработки данных в любое время</li>
+                </ul>
+                <p>Для реализации прав напишите нам: <a href="mailto:raz_etka_2010@mail.ru" style="color: var(--accent-safe); font-weight: 600;">raz_etka_2010@mail.ru</a></p>
+            </div>
+
+            <!-- 7. Хранение данных -->
+            <div class="policy-section">
+                <h2><i class="fas fa-clock"></i> 7. Сроки хранения</h2>
+                <p>Мы храним данные:</p>
+                <ul>
+                    <li>Логи посещений — до 1 года</li>
+                    <li>Обращения через форму — до 3 лет (для архива)</li>
+                    <li>Cookies — до 1 года</li>
+                </ul>
+                <p>После истечения срока данные удаляются или обезличиваются.</p>
+            </div>
+
+            <!-- 8. Дети -->
+            <div class="policy-section">
+                <h2><i class="fas fa-child"></i> 8. Защита детей</h2>
+                <p>Наш сайт не предназначен для детей младше 16 лет. Мы сознательно не собираем данные несовершеннолетних. Если вы обнаружили, что ребенок предоставил нам данные — сообщите, и мы удалим их.</p>
+            </div>
+
+            <!-- 9. Изменения политики -->
+            <div class="policy-section">
+                <h2><i class="fas fa-sync-alt"></i> 9. Изменения политики</h2>
+                <p>Мы можем обновлять политику конфиденциальности. Новая версия вступает в силу с даты публикации на этой странице. Рекомендуем периодически проверять изменения.</p>
+                <p>В случае существенных изменений мы уведомим вас заметным сообщением на сайте.</p>
+            </div>
+
+            <!-- 10. Контакты -->
+            <div class="policy-section">
+                <h2><i class="fas fa-envelope"></i> 10. Контакты для вопросов</h2>
+                <p>Если у вас есть вопросы о политике конфиденциальности или обработке ваших данных:</p>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 10px;"><i class="fas fa-envelope" style="color: var(--accent-safe); width: 25px;"></i> Email: <a href="mailto:raz_etka_2010@mail.ru" style="color: var(--primary-dark);">raz_etka_2010@mail.ru</a></li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-phone" style="color: var(--accent-safe); width: 25px;"></i> Телефон: +7 (937) 094-84-23 (по будням 10:00–18:00)</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-map-marker-alt" style="color: var(--accent-safe); width: 25px;"></i> Мой адрес Советский Союз!!!</li>
+                </ul>
+                <p>Ответственный за обработку данных: Шитиков.А.Ю.</p>
+            </div>
+
+            <!-- Кнопка печати -->
+            <div style="display: flex; justify-content: flex-end; margin-top: 30px;">
+                <button class="print-btn" onclick="window.print()">
+                    <i class="fas fa-print"></i> Сохранить как PDF / Распечатать
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Футер (такой же как на главной, для единства) -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4 style="color: white;">КиберЛаб</h4>
+                <a href="index.html#about-malware">О проекте</a>
+                <a href="index.html#contact">Контакты</a>
+                <a href="index.html#sitemap">Карта сайта</a>
+            </div>
+            <div class="footer-col">
+                <h4 style="color: white;">Скачать легитимно</h4>
+                <a href="https://kaspersky.ru" target="_blank">Kaspersky</a>
+                <a href="https://drweb.ru" target="_blank">Dr.Web CureIt!</a>
+                <a href="https://malwarebytes.com" target="_blank">Malwarebytes</a>
+            </div>
+            <div class="footer-col">
+                <h4 style="color: white;">Правовая</h4>
+                <a href="privacy.html" style="color: var(--accent-safe);">Политика конфиденциальности</a>
+                <a href="disclaimer.html">Дисклеймер</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            © 2026 КиберЛаб. Защита данных — наша миссия. Все права защищены. <br>
+            <span style="opacity: 0.6;">Не является официальным сайтом антивирусных вендоров. Информация ознакомительная.</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Cookie баннер (демонстрация) -->
+<div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+        <p>
+            <i class="fas fa-cookie-bite"></i>
+            Мы используем cookies для улучшения работы сайта. Продолжая использовать сайт, вы соглашаетесь с <a href="privacy.html" style="color: var(--accent-safe);">политикой конфиденциальности</a>.
+        </p>
+        <div class="cookie-buttons">
+            <button class="cookie-btn accept" onclick="acceptCookies()">Принять</button>
+            <button class="cookie-btn decline" onclick="declineCookies()">Отклонить</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Показываем баннер cookies при загрузке (если еще не принято)
+    if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookieBanner').style.display = 'block';
+    }
+
+    function acceptCookies() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        document.getElementById('cookieBanner').style.display = 'none';
+    }
+
+    function declineCookies() {
+        localStorage.setItem('cookiesAccepted', 'false');
+        document.getElementById('cookieBanner').style.display = 'none';
+        // При отказе можно отключить аналитику
+        console.log('Cookies отклонены');
+    }
+
+    // Настройка cookies (демо)
+    document.getElementById('showCookieSettings')?.addEventListener('click', function() {
+        alert('Функция настройки cookies будет доступна в ближайшее время. Сейчас можно принять или отклонить через баннер внизу страницы.');
+    });
+
+    // Подсветка активного пункта в меню
+    document.querySelectorAll('.footer-col a').forEach(link => {
+        if (link.href === window.location.href) {
+            link.style.color = '#4CAF50';
+            link.style.fontWeight = '600';
+        }
+    });
+</script>
+</body>
+</html>
