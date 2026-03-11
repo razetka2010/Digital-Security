@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КиберЛаб | Защита от вредоносных программ 2026</title>
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Подключаем внешний CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- ГЛАВНЫЙ ЭКРАН (Hero) с анимированным фоном -->
+<section class="hero">
+    <div class="hero-canvas" id="heroCanvas"></div>
+    <div class="container hero-content">
+        <h1>Вредоносные программы: от вирусов до шифровальщиков. Как защитить свои данные в 2026?</h1>
+        <p class="subhead">Узнайте, какие угрозы существуют сегодня и как построить надежную систему защиты для дома и офиса.</p>
+        <div class="hero-buttons">
+            <a href="#checklist-section" class="btn btn-primary"><i class="fas fa-shield-alt" style="margin-right: 8px;"></i>Начать защиту</a>
+            <a href="#virus-scanner" class="btn btn-outline"><i class="fas fa-search" style="margin-right: 8px;"></i>Проверить ПК</a>
+        </div>
+    </div>
+</section>
+
+<!-- ЧТО ТАКОЕ MALWARE + СТАТИСТИКА -->
+<div class="container">
+    <section id="about-malware">
+        <h2 class="section-title">Что такое вредоносное ПО (Malware)?</h2>
+        <p style="font-size: 1.2rem; max-width: 800px;">Простыми словами — это любое программное обеспечение, предназначенное для нанесения вреда устройству, кражи данных или скрытого использования ресурсов.</p>
+
+        <div class="stats-block">
+            <div class="stat-item">
+                <div class="stat-number">11 сек</div>
+                <div class="stat-desc">Каждые 11 секунд происходит атака с помощью программ-вымогателей</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">95%</div>
+                <div class="stat-desc">взломов происходит из-за ошибок пользователей</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">≈560 000</div>
+                <div class="stat-desc">новых вредоносных программ обнаруживается ежедневно</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ОСНОВНЫЕ ВИДЫ (карточки) -->
+    <section id="malware-types">
+        <h2 class="section-title">Основные виды вредоносных программ</h2>
+        <div class="threat-grid">
+            <!-- 1. Вирусы и Черви -->
+            <div class="threat-card">
+                <div class="threat-icon"><i class="fas fa-biohazard"></i></div>
+                <h3>Вирусы и Черви</h3>
+                <p>Классика. Заражают файлы и распространяются по сети самостоятельно.</p>
+            </div>
+            <!-- 2. Трояны -->
+            <div class="threat-card">
+                <div class="threat-icon"><i class="fas fa-mask"></i></div>
+                <h3>Трояны (Trojan)</h3>
+                <p>Маскируются под легальный софт. Крадут финансы и пароли.</p>
+            </div>
+            <!-- 3. Шифровальщики -->
+            <div class="threat-card">
+                <div class="threat-icon"><i class="fas fa-lock"></i></div>
+                <h3>Шифровальщики (Ransomware)</h3>
+                <p>Опаснее всего. Блокируют файлы и требуют выкуп.</p>
+            </div>
+            <!-- 4. Шпионское ПО -->
+            <div class="threat-card">
+                <div class="threat-icon"><i class="fas fa-eye"></i></div>
+                <h3>Шпионское ПО (Spyware)</h3>
+                <p>MAX <img src="MAX.svg" alt="Иконка MAX" width="20" height="20"> следит за вами</p>
+            </div>
+            <!-- 5. Рекламное ПО -->
+            <div class="threat-card">
+                <div class="threat-icon"><i class="fas fa-ad"></i></div>
+                <h3>Рекламное ПО (Adware)</h3>
+                <p>Встраивает рекламу в браузер, тормозит систему.</p>
+            </div>
+            <!-- 6. Майнеры -->
+            <div class="threat-card">
+                <div class="threat-icon"><i class="fas fa-microchip"></i></div>
+                <h3>Майнеры (Cryptominers)</h3>
+                <p> <img src="360.svg" alt="Иконка 360-TOTAL" width="22" height="22"> Использует мощность вашего ПК для добычи криптовалюты.</p>
+            </div>
+            <!-- 7. Руткиты -->
+            <div class="threat-card">
+                <div class="threat-icon"><i class="fas fa-dragon"></i></div>
+                <h3>Руткиты (Rootkits)</h3>
+                <p>Глубоко прячутся в системе, скрывая следы других вирусов.</p>
+            </div>
+            <!-- дополнительная карточка drive-by download намек -->
+            <div class="threat-card">
+                <div class="threat-icon"><i class="fas fa-download"></i></div>
+                <h3>Drive-by download</h3>
+                <p>Заражение при посещении сайта без клика. <img src="MAX.svg" alt="Иконка MAX" width="20" height="20"> MAX ловит даже на парковке без вашего согласия!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПРИЗНАКИ ЗАРАЖЕНИЯ (ЧЕК-ЛИСТ) -->
+    <section id="symptoms">
+        <h2 class="section-title">Признаки заражения компьютера</h2>
+        <div class="checklist" id="checklist-section">
+            <div class="checklist-grid">
+                <div class="checklist-item"><i class="fas fa-times-circle danger"></i> Резкое падение производительности (виснет, тормозит)</div>
+                <div class="checklist-item"><i class="fas fa-times-circle danger"></i> Навязчивая реклама даже на пустых сайтах</div>
+                <div class="checklist-item"><i class="fas fa-times-circle danger"></i> Программы запускаются сами по себе</div>
+                <div class="checklist-item"><i class="fas fa-times-circle danger"></i> Антивирус отключен и не включается</div>
+                <div class="checklist-item"><i class="fas fa-times-circle danger"></i> Пропадают или шифруются файлы</div>
+                <div class="checklist-item"><i class="fas fa-times-circle danger"></i> Странный сетевой трафик (индикатор мигает в простое)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СПОСОБЫ ЗАЩИТЫ + ПРАВИЛА ГИГИЕНЫ -->
+    <section id="protection">
+        <h2 class="section-title">Способы защиты (пошаговое руководство)</h2>
+        <div class="isometric-badge"><i class="fas fa-cubes"></i> Технические средства</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 25px; margin-bottom: 40px;">
+            <div style="flex: 1 1 200px; background: #eef4ff; padding: 20px; border-radius: 24px;">
+                <i class="fas fa-shield-virus" style="font-size: 2.5rem; color: var(--accent-safe); margin-bottom: 12px;"></i>
+                <h4>Антивирусы</h4>
+                <p>Платные (глубже защита) vs Бесплатные (базовый уровень). Главное — регулярно обновлять.</p>
+            </div>
+            <div style="flex: 1 1 200px; background: #eef4ff; padding: 20px; border-radius: 24px;">
+                <i class="fas fa-firewall" style="font-size: 2.5rem; color: var(--accent-safe); margin-bottom: 12px;"></i>
+                <h4>Фаерволы (Брандмауэры)</h4>
+                <p>Контролируют сетевой трафик, не дают вирусу связаться с хозяином.</p>
+            </div>
+            <div style="flex: 1 1 200px; background: #eef4ff; padding: 20px; border-radius: 24px;">
+                <i class="fas fa-sync-alt" style="font-size: 2.5rem; color: var(--accent-safe); margin-bottom: 12px;"></i>
+                <h4>Регулярное обновление ОС</h4>
+                <p>Закрывает уязвимости, через которые проникают вирусы.</p>
+            </div>
+        </div>
+
+        <div class="isometric-badge"><i class="fas fa-user-check"></i> Цифровая гигиена (важнее всего!)</div>
+        <div class="checklist" style="background: #e0f0ea;">
+            <div class="checklist-grid">
+                <div class="checklist-item"><i class="fas fa-check-circle" style="color: var(--accent-safe);"></i> Не переходить по ссылкам из писем от неизвестных</div>
+                <div class="checklist-item"><i class="fas fa-check-circle" style="color: var(--accent-safe);"></i> Не скачивать программы с торрентов и подозрительных сайтов</div>
+                <div class="checklist-item"><i class="fas fa-check-circle" style="color: var(--accent-safe);"></i> Использовать менеджер паролей</div>
+                <div class="checklist-item"><i class="fas fa-check-circle" style="color: var(--accent-safe);"></i> Двухфакторная аутентификация (2FA)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ЧТО ДЕЛАТЬ ПРИ ЗАРАЖЕНИИ -->
+    <section id="incident">
+        <h2 class="section-title">Что делать, если уже заразились?</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h4>Изоляция</h4>
+                <p>Отключите интернет-кабель и Wi-Fi, чтобы вирус не отправил данные.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h4>Безопасный режим</h4>
+                <p>Перезагрузите ПК в безопасном режиме (сетевые драйверы не загружаются).</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h4>Сканирование</h4>
+                <p>Запустите сканер: Dr.Web CureIt! или Kaspersky Virus Removal Tool.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <h4>Восстановление</h4>
+                <p>Если шифровальщик — попробуйте расшифровщики от «Лаборатории Касперского» (No Ransom).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ FAQ -->
+    <section id="faq">
+        <h2 class="section-title">Часто задаваемые вопросы</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h4><i class="fas fa-question-circle"></i> Защищает ли Защитник Windows?</h4>
+                <p>Да, базово. Для домашнего использования с осторожностью — хватит, но от целевых атак может не спасти. Дополнительный сканер Malwarebytes усилить защиту.</p>
+            </div>
+            <div class="faq-item">
+                <h4><i class="fas fa-question-circle"></i> Правда ли, что на Mac нет вирусов?</h4>
+                <p>Миф. Вредоносное ПО для macOS существует, просто его меньше. Пользователи Mac тоже подвержены фишингу и adware.</p>
+            </div>
+            <div class="faq-item">
+                <h4><i class="fas fa-question-circle"></i> Можно ли заразиться просто зайдя на сайт?</h4>
+                <p>Да, это Drive-by download. Устаревший браузер или плагины могут быть атакованы без вашего клика. Обновляйте софт!</p>
+            </div>
+            <div class="faq-item">
+                <h4><i class="fas fa-question-circle"></i> Помогают ли бесплатные антивирусы?</h4>
+                <p>От известных угроз — да. От новых шифровальщиков — не всегда. Лучше использовать многоуровневую защиту.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ДИСКЛЕЙМЕР (предупреждение) И ССЫЛКИ -->
+    <div class="disclaimer" id="virus-scanner">
+        <i class="fas fa-exclamation-triangle" style="font-size: 2rem; float: left; margin-right: 20px;"></i>
+        <p><strong>Важное предупреждение:</strong> Авторы сайта не несут ответственности за выбор программного обеспечения. Скачивайте программы только с официальных сайтов, чтобы не заразиться еще сильнее.</p>
+        <p style="margin-top: 12px;">✅ Рекомендуем официальные источники: <a href="https://kaspersky.ru" target="_blank" style="color: #0a192f; text-decoration: underline; font-weight: 600;">Лаборатория Касперского</a> , <a href="https://drweb.ru" target="_blank" style="color: #0a192f; text-decoration: underline;">Dr.Web</a>, <a href="https://eset.com/ru" target="_blank" style="color: #0a192f;">ESET</a>, <a href="https://malwarebytes.com" target="_blank" style="color: #0a192f;">Malwarebytes</a>.</p>
+    </div>
+</div> <!-- закрыт container основной -->
+
+<!-- ПОДВАЛ (FOOTER) -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4 style="color: white;">КиберЛаб</h4>
+                <a href="#">О проекте</a>
+                <a href="#">Контакты</a>
+                <a href="#">Карта сайта</a>
+            </div>
+            <div class="footer-col">
+                <h4 style="color: white;">Скачать легитимно</h4>
+                <a href="https://kaspersky.ru" target="_blank">Kaspersky</a>
+                <a href="https://drweb.ru" target="_blank">Dr.Web CureIt!</a>
+                <a href="https://malwarebytes.com" target="_blank">Malwarebytes</a>
+            </div>
+            <div class="footer-col">
+                <h4 style="color: white;">Правовая</h4>
+                <a href="#">Политика конфиденциальности</a>
+                <a href="#">Дисклеймер</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            © 2026 КиберЛаб. Защита данных — наша миссия. Все права защищены. <br>
+            <span style="opacity: 0.6;">Не является официальным сайтом антивирусных вендоров. Информация ознакомительная.</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Подключаем внешний JS -->
+<script src="script.js"></script>
+</body>
+</html>
