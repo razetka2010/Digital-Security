@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Как распознать мошенников в Telegram, защитить аккаунт и действовать, если вы сообщили код или отправили деньги.">
+    <title>Мошенники в Telegram: схемы и защита | КиберЛаб</title>
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-nav {
+            background: var(--primary-dark);
+            border-bottom: 1px solid #1e3850;
+        }
+
+        .page-nav .container {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand, .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+        }
+
+        .brand img {
+            width: 42px;
+            height: 42px;
+        }
+
+        .back-link:hover, .brand:hover {
+            color: #7cf0ad;
+        }
+
+        .telegram-hero {
+            color: white;
+            padding: 72px 0 64px;
+            background: linear-gradient(120deg, #0a192f 0%, #102d4c 65%, #135b58 100%);
+        }
+
+        .telegram-hero .container {
+            max-width: 960px;
+        }
+
+        .eyebrow {
+            color: #7cf0ad;
+            font-size: .88rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .telegram-hero h1 {
+            font-size: 3.4rem;
+            line-height: 1.12;
+            max-width: 780px;
+            margin-bottom: 18px;
+        }
+
+        .telegram-hero p:not(.eyebrow) {
+            color: #d5e5f0;
+            max-width: 700px;
+            font-size: 1.12rem;
+            margin-bottom: 26px;
+        }
+
+        .telegram-hero .btn {
+            background: #70e69f;
+            color: #08241f;
+        }
+
+        .telegram-hero .btn:hover {
+            background: #9af3bc;
+        }
+
+        .guide-main {
+            max-width: 1040px;
+            padding-top: 36px;
+            padding-bottom: 36px;
+        }
+
+        .urgent-note {
+            border-left: 5px solid #c7353c;
+            background: #fff0ed;
+            color: #54282a;
+            padding: 20px 24px;
+            margin: 0 0 58px;
+        }
+
+        .urgent-note strong {
+            color: #8d2028;
+        }
+
+        .guide-section {
+            padding: 0 0 54px;
+        }
+
+        .guide-section h2 {
+            color: var(--primary-dark);
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .section-intro {
+            color: #526275;
+            max-width: 760px;
+            margin-bottom: 24px;
+        }
+
+        .scam-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            border-top: 1px solid #d9e1e8;
+        }
+
+        .scam-item {
+            display: grid;
+            grid-template-columns: 42px 1fr;
+            gap: 14px;
+            padding: 22px 20px 22px 0;
+            border-bottom: 1px solid #d9e1e8;
+        }
+
+        .scam-item:nth-child(odd) {
+            margin-right: 24px;
+        }
+
+        .scam-index {
+            color: #16765a;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        .scam-item h3 {
+            color: #132b40;
+            font-size: 1.12rem;
+            margin-bottom: 6px;
+        }
+
+        .scam-item p, .secure-list p, .response-list p {
+            color: #526275;
+            font-size: .98rem;
+        }
+
+        .secure-list, .response-list {
+            list-style: none;
+            padding: 0;
+            margin: 26px 0 0;
+            counter-reset: item;
+        }
+
+        .secure-list li, .response-list li {
+            counter-increment: item;
+            display: grid;
+            grid-template-columns: 46px 1fr;
+            gap: 16px;
+            padding: 19px 0;
+            border-top: 1px solid #d9e1e8;
+        }
+
+        .secure-list li::before, .response-list li::before {
+            content: counter(item, decimal-leading-zero);
+            color: #16765a;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.15rem;
+        }
+
+        .secure-list h3, .response-list h3 {
+            color: #132b40;
+            font-size: 1.08rem;
+            margin-bottom: 4px;
+        }
+
+        .source-links {
+            border-top: 1px solid #d9e1e8;
+            padding-top: 24px;
+            margin-top: 6px;
+            color: #526275;
+        }
+
+        .source-links a {
+            color: #12644e;
+            font-weight: 600;
+        }
+
+        .checked-date {
+            color: #69798a;
+            font-size: .9rem;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 700px) {
+            .telegram-hero {
+                padding: 52px 0 48px;
+            }
+
+            .telegram-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .guide-section h2 {
+                font-size: 1.65rem;
+            }
+
+            .scam-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scam-item:nth-child(odd) {
+                margin-right: 0;
+            }
+
+            .urgent-note {
+                padding: 18px;
+                margin-bottom: 44px;
+            }
+
+            .page-nav .container {
+                min-height: 64px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="page-nav">
+    <div class="container">
+        <a class="brand" href="index.html"><img src="logo.svg" alt=""><span>КиберЛаб</span></a>
+        <a class="back-link" href="index.html"><i class="fas fa-arrow-left" aria-hidden="true"></i> На главную</a>
+    </div>
+</header>
+
+<section class="telegram-hero">
+    <div class="container">
+        <p class="eyebrow">Практическая безопасность · проверено 15 октября 2026</p>
+        <h1>Мошенники в Telegram</h1>
+        <p>Как распознать обман, защитить аккаунт и быстро действовать, если вы уже сообщили код или отправили деньги.</p>
+        <a class="btn" href="#protect"><i class="fas fa-shield-alt" aria-hidden="true"></i> Защитить аккаунт</a>
+    </div>
+</section>
+
+<main class="container guide-main">
+    <aside class="urgent-note">
+        <strong>Никому не сообщайте код входа в Telegram, пароль двухэтапной проверки или код восстановления.</strong>
+        Не сканируйте QR-код входа по просьбе незнакомца и не переводите деньги под давлением. Даже знакомый аккаунт мог попасть под контроль мошенника.
+    </aside>
+
+    <section class="guide-section" id="schemes">
+        <h2>Распространённые схемы</h2>
+        <p class="section-intro">Злоумышленники часто не взламывают приложение: они торопят человека и убеждают его самому передать доступ, данные или деньги.</p>
+        <div class="scam-grid">
+            <article class="scam-item">
+                <span class="scam-index">01</span>
+                <div><h3>«Поддержка» просит код</h3><p>Поддельный администратор, модератор или бот обещает решить проблему, подтвердить аккаунт или снять блокировку и просит код входа, пароль либо код из сообщения Telegram.</p></div>
+            </article>
+            <article class="scam-item">
+                <span class="scam-index">02</span>
+                <div><h3>Друг срочно просит денег</h3><p>Со взломанного аккаунта знакомого пишут о срочной нужде, переводе «до завтра» или голосовании по ссылке. Проверьте просьбу звонком по известному вам номеру.</p></div>
+            </article>
+            <article class="scam-item">
+                <span class="scam-index">03</span>
+                <div><h3>Поддельные розыгрыши и инвестиции</h3><p>Обещают гарантированную прибыль, подарок или возврат средств, но требуют предоплату, комиссию, seed-фразу криптокошелька или удалённый доступ к устройству.</p></div>
+            </article>
+            <article class="scam-item">
+                <span class="scam-index">04</span>
+                <div><h3>Фишинговая ссылка или QR-код</h3><p>Страница копирует вход в Telegram, сервис или конкурс и выманивает код и пароль. QR-код тоже может подтвердить вход на чужом устройстве.</p></div>
+            </article>
+            <article class="scam-item">
+                <span class="scam-index">05</span>
+                <div><h3>Вредоносный файл или бот</h3><p>Предлагают установить APK, открыть архив, запустить «проверку» или подключить кошелёк к мини-приложению. Боты и мини-приложения могут принадлежать сторонним разработчикам.</p></div>
+            </article>
+            <article class="scam-item">
+                <span class="scam-index">06</span>
+                <div><h3>Подмена личности</h3><p>Копируют имя, фотографию и описание знакомого, компании или канала. Сверяйте точный username и подтверждайте важные просьбы через другой, уже известный вам канал.</p></div>
+            </article>
+        </div>
+    </section>
+
+    <section class="guide-section" id="protect">
+        <h2>Как защитить аккаунт</h2>
+        <ol class="secure-list">
+            <li><div><h3>Включите двухэтапную проверку</h3><p>В Telegram откройте «Настройки → Конфиденциальность → Двухэтапная проверка». Задайте уникальный пароль и защищённую почту для восстановления.</p></div></li>
+            <li><div><h3>Проверяйте активные сеансы</h3><p>Откройте «Настройки → Устройства» и завершите сеансы, которые вы не узнаёте. Не подтверждайте вход по просьбе другого человека.</p></div></li>
+            <li><div><h3>Считайте код входа секретом</h3><p>Не пересылайте код из чата Telegram, не вводите его на странице из сообщения и не отправляйте «поддержке». Telegram указывает, что код входа в аккаунт нельзя сообщать никому.</p></div></li>
+            <li><div><h3>Проверяйте просьбы отдельно</h3><p>Если знакомый просит деньги или присылает неожиданную ссылку, свяжитесь с ним звонком или другим способом, который уже использовали раньше.</p></div></li>
+            <li><div><h3>Осторожно с файлами, ботами и мини-приложениями</h3><p>Не устанавливайте приложения из переписки и не давайте ботам пароли, коды, банковские данные или фразы восстановления кошелька.</p></div></li>
+            <li><div><h3>Ограничьте видимость номера</h3><p>В настройках конфиденциальности проверьте, кто может видеть ваш номер и находить вас по нему. Используйте только официальный клиент Telegram из доверенного магазина приложений.</p></div></li>
+        </ol>
+    </section>
+
+    <section class="guide-section" id="recovery">
+        <h2>Если вы уже попались</h2>
+        <ol class="response-list">
+            <li><div><h3>Передали код или отсканировали QR-код</h3><p>Если ещё есть доступ к аккаунту, откройте «Настройки → Устройства» и завершите все незнакомые сеансы. Затем включите или смените пароль двухэтапной проверки и защитите почту восстановления.</p></div></li>
+            <li><div><h3>Потеряли доступ к аккаунту или SIM-карте</h3><p>Обратитесь к мобильному оператору, чтобы защитить номер и восстановить SIM, если это необходимо. Используйте только официальную поддержку: <a href="https://telegram.org/support" target="_blank" rel="noopener noreferrer">telegram.org/support</a>. Не платите посредникам за «возврат аккаунта».</p></div></li>
+            <li><div><h3>Отправили деньги или данные карты</h3><p>Сразу позвоните в банк по номеру с карты или официального приложения и сообщите о мошенничестве. Сохраните переписку, ссылки, чеки и реквизиты; дальнейшее обращение подайте в компетентные органы.</p></div></li>
+            <li><div><h3>Сообщите о мошеннике и предупредите близких</h3><p>Пожалуйтесь на сообщение или аккаунт через меню Telegram. О подделке вашей личности Telegram рекомендует сообщить <a href="https://t.me/notoscam" target="_blank" rel="noopener noreferrer">@NoToScam</a>. Предупредите контакты по другому каналу, если с вашего аккаунта могли писать.</p></div></li>
+        </ol>
+    </section>
+
+    <section class="guide-section" id="sources">
+        <h2>Официальные инструкции</h2>
+        <p class="source-links"><a href="https://telegram.org/faq" target="_blank" rel="noopener noreferrer">FAQ Telegram: безопасность, коды и восстановление аккаунта</a><br>
+        <a href="https://telegram.org/faq_spam" target="_blank" rel="noopener noreferrer">FAQ Telegram о жалобах на спам</a><br>
+        <a href="https://telegram.org/support" target="_blank" rel="noopener noreferrer">Поддержка Telegram</a></p>
+        <p class="checked-date">Содержание сверено с официальным FAQ Telegram 15 октября 2026 года. Названия разделов настроек могут отличаться в разных версиях приложения.</p>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4 style="color: white;">КиберЛаб</h4>
+                <a href="index.html">Главная</a>
+                <a href="index.html#protection">Общая защита</a>
+                <a href="telegram-scams.html">Мошенники в Telegram</a>
+            </div>
+            <div class="footer-col">
+                <h4 style="color: white;">Официальные ресурсы</h4>
+                <a href="https://telegram.org/faq" target="_blank" rel="noopener noreferrer">FAQ Telegram</a>
+                <a href="https://t.me/notoscam" target="_blank" rel="noopener noreferrer">@NoToScam</a>
+            </div>
+            <div class="footer-col">
+                <h4 style="color: white;">Правовая информация</h4>
+                <a href="privacy.html">Политика конфиденциальности</a>
+                <a href="disclaimer.html">Дисклеймер</a>
+            </div>
+        </div>
+        <div class="footer-copyright">© 2026 КиберЛаб. Информационный проект.<br><span style="opacity: 0.6;">Общие рекомендации; проверяйте критически важные сведения по официальным источникам.</span></div>
+    </div>
+</footer>
+</body>
+</html>

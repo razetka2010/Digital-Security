@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="title desc">
+  <title id="title">КиберЛаб — логотип</title>
+  <desc id="desc">Круглый логотип кибербезопасности в тёмно-синем цвете с красными символами угроз и зелёным щитом защиты.</desc>
+  <defs>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#168BFF"/>
+      <stop offset=".55" stop-color="#0875E8"/>
+      <stop offset="1" stop-color="#16D987"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#5CF58B"/>
+      <stop offset="1" stop-color="#00C982"/>
+    </linearGradient>
+    <clipPath id="circleClip"><circle cx="256" cy="256" r="238"/></clipPath>
+  </defs>
+  <circle cx="256" cy="256" r="247" fill="#071A38"/>
+  <circle cx="256" cy="256" r="237" fill="#071A38" stroke="url(#ring)" stroke-width="9"/>
+  <g clip-path="url(#circleClip)">
+    <!-- Threat circuitry -->
+    <g fill="none" stroke="#FF3B46" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M48 235h48l24-24h34"/>
+      <path d="M57 288h43l25 25h35"/>
+      <path d="M91 171h29l18 18h22"/>
+      <path d="M128 211l20 20h20"/>
+    </g>
+    <g fill="#FF3B46">
+      <circle cx="165" cy="211" r="5"/><circle cx="157" cy="171" r="5"/>
+      <circle cx="169" cy="288" r="5"/><circle cx="170" cy="235" r="5"/>
+      <circle cx="112" cy="211" r="19"/>
+      <circle cx="112" cy="211" r="5" fill="#071A38"/>
+      <circle cx="112" cy="185" r="4"/><circle cx="112" cy="237" r="4"/>
+      <circle cx="86" cy="211" r="4"/><circle cx="138" cy="211" r="4"/>
+      <circle cx="94" cy="193" r="4"/><circle cx="130" cy="229" r="4"/>
+      <circle cx="130" cy="193" r="4"/><circle cx="94" cy="229" r="4"/>
+    </g>
+    <!-- Green protection circuitry -->
+    <g fill="none" stroke="#16E58A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M359 175h26l17-17h28"/>
+      <path d="M359 226h43l18-18h34"/>
+      <path d="M357 278h28l18 18h35"/>
+    </g>
+    <g fill="#071A38" stroke="#16E58A" stroke-width="5">
+      <circle cx="430" cy="158" r="7"/><circle cx="454" cy="208" r="7"/><circle cx="438" cy="296" r="7"/>
+    </g>
+    <path d="M256 55 184 91 158 139 161 214Q168 278 210 311L256 338 302 311Q344 278 351 214L354 139 328 91Z" fill="#0B3470" stroke="#168BFF" stroke-width="5"/>
+    <!-- Hooded guardian -->
+    <path d="M256 89c-40 0-66 36-69 75l-17 48 28 45h116l28-45-17-48c-3-39-29-75-69-75Z" fill="#0A2149" stroke="#32B7FF" stroke-width="4"/>
+    <path d="M211 166l24 8-17 8Z M301 166l-24 8 17 8Z" fill="#F5FBFF"/>
+    <path d="M181 246q8-24 32-24h86q24 0 32 24l14 45H167Z" fill="#0D4B91" stroke="#168BFF" stroke-width="4"/>
+    <!-- Main protection shield -->
+    <path d="M256 210 329 238 322 286Q311 323 256 349 201 323 190 286L183 238Z" fill="#052C4B" stroke="url(#shield)" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M256 233 306 252 301 284Q293 309 256 328 219 309 211 284L206 252Z" fill="#0B2747" opacity=".95"/>
+    <!-- Lock -->
+    <path d="M237 273v-11a19 19 0 0 1 38 0v11" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+    <rect x="226" y="270" width="60" height="48" rx="8" fill="#FFFFFF"/>
+    <circle cx="256" cy="289" r="6" fill="#0B2B52"/>
+    <path d="M256 293v10" stroke="#0B2B52" stroke-width="5" stroke-linecap="round"/>
+    <!-- Wordmark -->
+    <text x="256" y="394" text-anchor="middle" font-family="Montserrat, 'Open Sans', Arial, sans-serif" font-size="48" font-weight="800" letter-spacing="-2">
+      <tspan fill="#FFFFFF">Кибер</tspan><tspan fill="#16E58A">Лаб</tspan>
+    </text>
+    <path d="M95 424h45 M372 424h45" stroke="#16E58A" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="256" y="430" text-anchor="middle" font-family="Montserrat, 'Open Sans', Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2.2" fill="#DCEBFF">ЗАЩИТА ВАШИХ ДАННЫХ</text>
+  </g>
+</svg>
