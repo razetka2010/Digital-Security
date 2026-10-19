@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ваш-домен.ru/sitemap.xml
+Sitemap: https://razetka2010.github.io/Digital-Security/sitemap.xml
